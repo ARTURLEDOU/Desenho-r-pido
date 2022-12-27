@@ -59,13 +59,28 @@ function setup() {
       if (drawSketch == Element_of_array){
           resposte = "set";
           pountação ++;
-          document.getElementById('pountação').innerHTML = pountação ;
+          document.getElementById('pontuação').innerHTML = pountação ;
 
           
       }
       
   }
   
+function checkSketch(){
+time ++;
+        document.getElementById('tempo').innerHTML = time ;
+    if(time>400){
+        time = 0;
+        timer = "Completo";
+    }
+if (timer == "Completo" || resposta == "set"){
+    timer = "";
+    resposta = "";
+    
+    updateCanvas()
+}
+}
+
   function classifyCanvas() {
     classifier.classify(canvas, gotResult);
   }
