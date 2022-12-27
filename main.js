@@ -15,6 +15,17 @@ Element_of_array  = quickDrawDataset[randomNo]
 
     document.getElementById('name').innerHTML = Element_of_array ;
 
+function updateCanvas(){
+        background("white");
+    
+    randomNo = Math.floor((Math.random() *quickDrawDataset.length)+1)
+    
+    Element_of_array  = quickDrawDataset[randomNo]
+
+    document.getElementById('name').innerHTML = Element_of_array ;
+
+}
+
 
 function setup() {
     canvas = createCanvas(400, 400);
@@ -32,10 +43,7 @@ function setup() {
   
   
   
-  function clearCanvas() {
-  
-    background("white");
-  }
+
   
   function draw() {
   
@@ -47,6 +55,15 @@ function setup() {
     if (mouseIsPressed) {
       line(pmouseX, pmouseY, mouseX, mouseY);
     }
+      checkSketch()
+      if (drawSketch == Element_of_array){
+          resposte = "set";
+          pountação ++;
+          document.getElementById('pountação').innerHTML = pountação ;
+
+          
+      }
+      
   }
   
   function classifyCanvas() {
