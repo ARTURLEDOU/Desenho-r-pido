@@ -45,6 +45,10 @@ function setup() {
   
   
     document.getElementById('confidence').innerHTML = 'Precisão: ' + Math.round(results[0].confidence * 100) + '%';
+      
+          document.getElementById('pontuação').innerHTML = 'Pontuação: ' + Math.round(results[0].confidence * 10);
+
+      
   
     utterThis = new SpeechSynthesisUtterance(result.replace('_', ' '));
     synth.speak(utterThis);
